@@ -10,6 +10,7 @@ import time
 import halo
 from tqdm import tqdm
 from colorama import init
+from prettytable import PrettyTable
 
 def create_connection():
     conn = None
@@ -105,15 +106,18 @@ def update_username_by_password(conn):
     else:
         print(f"Password does not exist.")
 
+
+
 def retrieve_all_data(conn):
     c = conn.cursor()
     c.execute("SELECT * FROM passwords")
     rows = c.fetchall()
     if rows:
-        print("ID\tUsername\tPassword")
-        print("--\t--------\t--------")
+        table = PrettyTable()
+        table.field_names = ["ID", "Username", "Password"]
         for row in rows:
-            print(f"{row[0]}\t{row[1]}\t\t{row[2]}")
+            table.add_row([row[0], row[1], row[2]])
+        print(table)
     else:
         print("No data found.")
         
