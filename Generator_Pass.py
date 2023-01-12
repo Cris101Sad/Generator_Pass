@@ -22,6 +22,7 @@ def create_connection():
     if conn:
         return conn
 
+
 def generate_password(length):
     # check if length is a valid number
     if not str(length).isnumeric():
@@ -33,7 +34,7 @@ def generate_password(length):
         return None
     # generate a secure password if input is valid
     letters_and_digits = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(letters_and_digits) for i in range(length))
+    password = ''.join(random.choice(letters_and_digits) for i in range(int(length)))
     return password
 
 def generate_password_for_username(conn):
@@ -52,7 +53,7 @@ def generate_password_for_username(conn):
             print(f"Username '{username}' does not exist.")
 
 def create_table(conn):
-    sql_create_table = """CREATE TABLE passwords (
+    sql_create_table = """CREATE TABLE IF NOT EXISTS passwords (
                                 id integer PRIMARY KEY,
                                 username text NOT NULL UNIQUE,
                                 password text NOT NULL
@@ -175,7 +176,8 @@ def main():
         else:
             print(colored("❌ Error: Connection failed!", "red", attrs=["bold"]))
         print() 
-        print(colored("💾 Table 'passwords' already exists.", "blue"))
+        print(colored("💾 Creating table 'passwords'...", "blue"))
+        create_table(conn)
         print() 
 
         password_prompt = input("🔑 Please enter the password for this script: ")
