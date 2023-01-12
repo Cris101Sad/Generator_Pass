@@ -4,9 +4,6 @@
 Password Manager is a python code that helps generate a secure password and store it with a corresponding username. The code uses a database to store the username and password for each user. 
 
 
-<iframe src="https://player.vimeo.com/video/788521873" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-
-
 ## Features 
 - Generate a secure password with a length of between 8 and 32 characters 
 - Store the username and password in a database 
