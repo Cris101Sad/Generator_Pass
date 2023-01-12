@@ -7,11 +7,9 @@ import sys
 import os
 import textwrap
 import time
-import halo
-from tqdm import tqdm
 from colorama import init
 from prettytable import PrettyTable
-import itertools
+
 
 
 def create_connection():
