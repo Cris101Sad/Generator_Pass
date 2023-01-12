@@ -30,29 +30,27 @@ These instructions will get you a copy of the project up and running on your loc
 3. Enter your password in the `password_prompt` variable 
 4. Run the code in the command line/terminal 
 
+
 ## Usage 
 
-1. When the program runs, it will display the main menu 
-2. Select an option from the menu by entering the corresponding number 
-3. Follow the instructions on the screen 
+If you are on a phone, make sure you are using a command line interface or terminal to run the code. 
+
+1. Open a terminal and `cd` into the project folder.
+2. Install the packages by running `pip install -r requirements.txt`.
+3. Run the main.py file by typing `python Generator_Pass.py`.
+4. Enter the password for this script (change the password on password_prompt).
+5. Select the option you want to perform. 
+6. Follow the on-screen instructions.
 
 
-## Installing Dependencies
+## Requirements 
 
-To use this code, you will need to install the following dependencies: 
-- [termcolor](https://pypi.org/project/termcolor/)
-- [halo](https://pypi.org/project/halo/)
-- [tqdm](https://pypi.org/project/tqdm/)
-- [colorama](https://pypi.org/project/colorama/)
-
-These can be installed using `pip`: 
-
-```
-pip install termcolor
-pip install halo
-pip install tqdm
-pip install colorama
-```
+This project requires the following packages: 
+- sqlite3==3.31.1
+- termcolor==1.1.0
+- halo==0.0.29
+- tqdm==4.47.0
+- colorama==0.4.3
 
 ## Security
 
