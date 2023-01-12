@@ -4,3 +4,4 @@ halo==0.0.29
 tqdm==4.47.0
 colorama==0.4.3
 prettytable==0.7.2
+itertools==8.0.2
