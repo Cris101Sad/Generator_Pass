@@ -68,9 +68,11 @@ The code requires a password in order to gain access. Make sure to enter a secur
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Author
+## Author & Support
 
 Cristian Mar Q. De Guzman - [Github](https://github.com/Cris101Sad) 
+If you are having any issues with the project, please contact me at [cristianmardeguzman@gmail.com]
+
 
 
 ## Contributing 
