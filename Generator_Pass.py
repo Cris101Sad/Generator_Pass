@@ -108,19 +108,18 @@ def update_username_by_password(conn):
         print(f"Password does not exist.")
 
 
-
 def retrieve_all_data(conn):
     c = conn.cursor()
     c.execute("SELECT * FROM passwords")
     rows = c.fetchall()
     if rows:
         table = PrettyTable()
-        table.field_names = ["ID", "Username", "Password"]
+        table.field_names = [colored("ID", "cyan"), colored("Username", "cyan"), colored("Password", "cyan")]
         for row in rows:
-            table.add_row([row[0], row[1], row[2]])
-        print(table)
+            table.add_row([colored(row[0], "magenta"), row[1], row[2]])
+        print(colored(table, "green"))
     else:
-        print("No data found.")
+        print(colored("No data found.", "red", attrs=['bold']))
         
 def retrieve_password(conn, username):
     c = conn.cursor()
@@ -165,7 +164,7 @@ def menu():
     print(colored("Please select an option (1-7):", "green"))
     print(colored("Press Enter to continue...", "green"))
     print()
-    
+
 def main():
     while True:
         print("="*40)
