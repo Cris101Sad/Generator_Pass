@@ -1,0 +1,5 @@
+sqlite3==3.31.1
+termcolor==1.1.0
+halo==0.0.29
+tqdm==4.47.0
+colorama==0.4.3
