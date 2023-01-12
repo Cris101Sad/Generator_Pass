@@ -11,6 +11,7 @@ import halo
 from tqdm import tqdm
 from colorama import init
 from prettytable import PrettyTable
+import itertools
 
 def create_connection():
     conn = None
@@ -141,29 +142,30 @@ def read_data(conn):
 
 
 def menu():
-  
     init()
-
-    print("+----------------------------------+")
-    print("|           MAIN MENU              |")
-    print("+----------------------------------+")
-    for i in tqdm(range(7), desc="Loading Menu",  bar_format="{l_bar}{bar} | 🔥 {n_fmt}/{total_fmt} 🔥"):
-        time.sleep(0.5)
-        with halo.Halo(text="Loading Menu", spinner="dots") as spinner:
-            spinner.start()
-            spinner.stop()
-    print(textwrap.fill(colored("[1] Update password by username", "cyan"), width=40))
-    print(textwrap.fill(colored("[2] Update username by password", "cyan"), width=40))
-    print(textwrap.fill(colored("[3] Generate password for username", "cyan"), width=40))
-    print(textwrap.fill(colored("[4] Retrieve all data", "cyan"), width=40))
-    print(textwrap.fill(colored("[5] Insert new data", "cyan"), width=40))
-    print(textwrap.fill(colored("[6] Delete data", "cyan"), width=40))
-    print(textwrap.fill(colored("[7] Exit", "red"), width=40))
-    print("+----------------------------------+")
-    print("Please select an option (1-7):")
-    print("Press Enter to continue...")
+    print(colored("Loading Menu... Please wait", "yellow"), end="\r")
+    animation = "|/-\\"
+    for i in range(20):
+        time.sleep(0.1)
+        sys.stdout.write("\r" + animation[i % len(animation)])
+        sys.stdout.flush()
+    print("\n")
+    print(colored("+----------------------------------+", "blue"))
+    print(colored("|           MAIN MENU              |", "blue"))
+    print(colored("+----------------------------------+", "blue"))
+    print(colored("\n" + "-"*40, "blue"))
+    print(colored("[1] Update password by username", "cyan"))
+    print(colored("[2] Update username by password", "cyan"))
+    print(colored("[3] Generate password for username", "cyan"))
+    print(colored("[4] Retrieve all data", "cyan"))
+    print(colored("[5] Insert new data", "cyan"))
+    print(colored("[6] Delete data", "cyan"))
+    print(colored("[7] Exit", "red"))
+    print(colored("+----------------------------------+", "blue"))
+    print(colored("Please select an option (1-7):", "green"))
+    print(colored("Press Enter to continue...", "green"))
     print()
-
+    
 def main():
     while True:
         print("="*40)
